@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS test(
+    a TINYINT,
+    b SMALLINT,
+    c MEDIUMINT,
+    d INT,
+    e BIGINT
+);
+
+INSERT INTO test(a) VALUES(127);
