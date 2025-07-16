@@ -19,3 +19,14 @@ INSERT INTO test2(a) values('12:10');
 INSERT INTO test2(a) values(121235);
 INSERT INTO test2(a) values('14');
 select * from test2;
+
+-- YEAR
+DROP TABLE test3;
+create TABLE test3(a YEAR);
+INSERT INTO test3(a) values(1901);
+INSERT INTO test3(a) values(2155);
+INSERT INTO test3(a) values("1902");
+INSERT INTO test3(a) values(70);
+INSERT INTO test3(a) values(0);
+INSERT INTO test3(a) values("0");
+select * from test3;
