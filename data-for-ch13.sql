@@ -1,6 +1,5 @@
-drop TABLE customers;
 drop TABLE orders;
-
+drop TABLE customers;
 
 CREATE TABLE customers(
     id INT AUTO_INCREMENT PRIMARY KEY,
