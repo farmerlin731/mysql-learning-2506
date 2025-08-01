@@ -12,7 +12,9 @@ INSERT INTO customers(first_name, last_name, email) VALUES
     ('Robin', 'Jackman', 'roj@gmail.com'),
     ('Taylor', 'Edward', 'taed@gmail.com'),
     ('Vivian', 'Dickens', 'vidi@gmail.com'),
-    ('Harley', 'Gilbert', 'hgi@gmail.com');
+    ('Harley', 'Gilbert', 'hgi@gmail.com'),
+    ("haha","lin","haha@gmail.com");
+
 
 CREATE TABLE orders(
     id INT AUTO_INCREMENT PRIMARY KEY,
