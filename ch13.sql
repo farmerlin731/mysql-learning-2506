@@ -63,3 +63,14 @@ from customers left join orders on customers.id = orders.customer_id group by cu
 -- +------------+-----------+--------------+
 
 
+-- delete customers
+delete from customers where id = 1;
+select * from orders;
+-- +----+------------+--------+-------------+
+-- | id | order_date | amount | customer_id |
+-- +----+------------+--------+-------------+
+-- |  2 | 2001-09-21 | 110.99 |           2 |
+-- |  4 | 2001-11-29 |  88.09 |           3 |
+-- |  5 | 2001-11-11 | 205.01 |           4 |
+-- |  6 | 2025-07-25 |  66.66 |           4 |
+-- +----+------------+--------+-------------+
