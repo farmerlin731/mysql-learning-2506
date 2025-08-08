@@ -20,3 +20,36 @@ order by avg_rating desc;
 -- | The Hunger Games (Book 3)                                     |       7.52 |
 -- | Splatoon 2                                                    |       5.38 |
 -- +---------------------------------------------------------------+------------+
+
+-- Question 2
+select first_name,last_name,ROUND(AVG(rating),2) as avg_rating 
+from reviewers 
+inner join reviews on reviewers.id = reviews.reviewer_id 
+group by reviewers.id;
+-- +------------+-----------+------------+
+-- | first_name | last_name | avg_rating |
+-- +------------+-----------+------------+
+-- | Thomas     | Stoneman  |       8.02 |
+-- | Wyatt      | Skaggs    |       7.71 |
+-- | Kimbra     | Masters   |       7.86 |
+-- | Domingo    | Cortes    |       7.78 |
+-- | Colt       | Steele    |       8.77 |
+-- | Pinkie     | Petit     |       7.25 |
+-- +------------+-----------+------------+
+
+-- Question 3
+select first_name,last_name,ROUND(AVG(rating),2) as avg_rating 
+from reviewers 
+left join reviews on reviewers.id = reviews.reviewer_id 
+group by reviewers.id;
+-- +------------+-----------+------------+
+-- | first_name | last_name | avg_rating |
+-- +------------+-----------+------------+
+-- | Thomas     | Stoneman  |       8.02 |
+-- | Wyatt      | Skaggs    |       7.71 |
+-- | Kimbra     | Masters   |       7.86 |
+-- | Domingo    | Cortes    |       7.78 |
+-- | Colt       | Steele    |       8.77 |
+-- | Pinkie     | Petit     |       7.25 |
+-- | Marlon     | Crafford  |       NULL |
+-- +------------+-----------+------------+
