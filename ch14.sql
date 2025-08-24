@@ -82,3 +82,22 @@ order by AVG desc;
 -- | Pinkie     | Petit     |     4 |  4.3 |  8.8 | 7.25 | ACTIVE     |
 -- | Marlon     | Crafford  |     0 |  0.0 |  0.0 | 0.00 | INACTIVE   |
 -- +------------+-----------+-------+------+------+------+------------+
+
+-- SELF TEST: Many-To-Many(Books <-> Reviewers)
+-- Search books whick is reviewed by someone
+select b.id,b.title,b.released_year, b.paperback,reviews.rating
+from books b
+join reviews on b.id = reviews.book_id
+where reviews.reviewer_id = 2;
+-- +----+--------------------------------------------------------+---------------+-----------+--------+
+-- | id | title                                                  | released_year | paperback | rating |
+-- +----+--------------------------------------------------------+---------------+-----------+--------+
+-- |  1 | Fifty Shades of Grey Series                            |          2012 |       514 |    7.5 |
+-- |  4 | Santo Remedio                                          |          2017 |       240 |    7.6 |
+-- |  5 | The Fault in Our Stars                                 |          2012 |       318 |    9.3 |
+-- |  6 | Harry Potter Und der Stein der Weisen (German Edition) |          2005 |       334 |    6.5 |
+-- |  6 | Harry Potter Und der Stein der Weisen (German Edition) |          2005 |       334 |    8.4 |
+-- |  7 | Collection Folio, no. 2                                |          1971 |       185 |    9.1 |
+-- |  8 | Santo remedio: Ilustrado y a color                     |          2018 |       216 |    7.8 |
+-- |  9 | Splatoon 2                                             |          2017 |       384 |    5.5 |
+-- +----+--------------------------------------------------------+---------------+-----------+--------+
