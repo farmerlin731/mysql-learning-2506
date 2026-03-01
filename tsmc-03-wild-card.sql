@@ -18,7 +18,10 @@ FROM job_postings_fact AS jpc
 
 
 -- Operations
+-- It can be use at anywhere, like: SELECT/WHERE/ORDER BY/GROUP BY/
 SELECT
     hours_rate AS rate_ori,
     hours_rate -5 AS rate_drop
 FROM invoices_face
+
+-- END @ 59:47
