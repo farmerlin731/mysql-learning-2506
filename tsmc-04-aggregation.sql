@@ -41,3 +41,16 @@ HAVING
 	salary_avg > 100000
 ORDER BY
 	salary_avg DESC;
+
+-- NULL
+SELECT 
+    job_title AS title,
+    salary_year_avg
+FROM 
+	job_postings_fact
+WHERE
+	salary_year_avg IS NOT null
+ORDER BY
+	salary_year_avg ASC;
+
+-- END @ 1:10:08
