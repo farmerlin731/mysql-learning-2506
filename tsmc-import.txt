@@ -1,0 +1,9 @@
+mysql -u root -p sql_course --local-infile=1 -e "
+LOAD DATA LOCAL INFILE '/Users/yuchiehlin/MYSQL-script-250706/all_folders/csv_files/skills_job_dim.csv'
+INTO TABLE skills_job_dim
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+"
