@@ -39,4 +39,26 @@ SELECT
 FROM company_dim
 LEFT JOIN company_jobs_count ON company_dim.company_id = company_jobs_count.company_id
 ORDER BY company_jobs_count.total_jobs  DESC
--- end @ 2:42:31
+
+-- MORE PRATICE
+WITH remote_job_skills AS(
+    SELECT
+        skill_id,
+        COUNT(*) AS skill_count
+    FROM
+        skills_job_dim AS skills_to_job
+    INNER JOIN job_postings_fact AS job_poster ON job_poster.job_id = skills_to_job.job_id
+    WHERE job_poster.job_work_from_home = 0
+    GROUP BY skill_id
+    ORDER BY skill_id ASC
+)
+SELECT 
+    skills_dim.skill_id,
+    skills_dim.skills,
+    remote_job_skills.skill_count
+FROM remote_job_skills
+INNER JOIN skills_dim ON remote_job_skills.skill_id = skills_dim.skill_id
+GROUP BY
+LIMIT 5
+
+-- END @ 2:50:15
